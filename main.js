@@ -9,33 +9,6 @@ lines.forEach(lines => lines.style.stroke = "white");
 
 console.log(lines.map(elem => elem.id));
 
-/*
-function getLineIDs(searchTerm){
-  let line = [...document.querySelectorAll("line")];
- let line2=[];
-  
-line.forEach(function(line) {
-  if(line.id.includes(searchTerm)){line2.push(line.id);}
-})
-return line2;
-}
-
-console.log(getLineIDs('A0D'));
-*/
-
-
-
-
-/*
-lines.forEach(function(lines){
-  if(lines.id.includes('A0-Route-00')){lines.style.stroke = "red"}
-  if(lines.id.includes('A0-Route-01')){lines.style.stroke = "red"}
-  if(lines.id.includes('A0D0')){lines.style.stroke = "red"}
-})
-*/
-
-//--------------------
-
 function binaryToPriorityCode(binary) {
   let priorityCode = 0;
   let weight = 1;
@@ -48,7 +21,6 @@ function binaryToPriorityCode(binary) {
   }
 
   return priorityCode;
-
 }
 
 let binArray = ['0','0','0','0'];
@@ -65,7 +37,6 @@ let binaryNumber = D+C+B+A;
 function updateRects() {
 //0b1000
 
-
  D=binArray[0];
  C=binArray[1];
  B=binArray[2];
@@ -73,7 +44,6 @@ function updateRects() {
 
  binaryNumber = D+C+B+A;
 
-//let binaryNumber='1001';
 binaryValue = '0b' + binaryNumber;
 
 const priorityCode = binaryToPriorityCode(binaryValue);
@@ -369,7 +339,7 @@ lines.forEach(function(lines){
     // Umkehrung des Werts (von '0' zu '1' und umgekehrt)
     binArray[index] = binArray[index] === '0' ? '1' : '0';
   
-    // Aktualisiere den Text der Buttons entsprechend
+ 
     //updateButtonTexts();
   
     updateRects();
@@ -379,12 +349,12 @@ lines.forEach(function(lines){
 
     const buttons = document.querySelectorAll('.button');
     if (buttons[b].style.backgroundColor === 'green') {
-      // Setze die Farbe zurück
+      // Farbe zurücksetzen
       buttons[b].style.backgroundColor = '';
       buttons[b].textContent='aus';
   } else {
-      // Ändere die Farbe
-      buttons[b].style.backgroundColor = 'green'; // Hier kannst du die gewünschte Farbe angeben
+      // Farbe ändern
+      buttons[b].style.backgroundColor = 'green'; // Gewünschte Farbe
       buttons[b].textContent='an';
   }
 
